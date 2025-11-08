@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momina Mazak Machine 😄</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding-top: 70px;
+  }
+  h1 {
+    color: #ff4081;
+  }
+  select, button {
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    margin: 8px;
+    cursor: pointer;
+  }
+  select {
+    background-color: #e3f2fd;
+  }
+  button {
+    color: white;
+  }
+  #chidhaoBtn {
+    background-color: #03a9f4;
+  }
+  #chidhaoBtn:hover {
+    background-color: #0288d1;
+  }
+  #requestBtn {
+    background-color: #ff9800;
+  }
+  #requestBtn:hover {
+    background-color: #f57c00;
+  }
+  #rukjaoBtn {
+    background-color: #4caf50;
+  }
+  #rukjaoBtn:hover {
+    background-color: #388e3c;
+  }
+  #messageBox {
+    margin-top: 25px;
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+    border-radius: 15px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s;
+  }
+  footer {
+    margin-top: 60px;
+    color: gray;
+  }
+</style>
+</head>
+<body>
+
+<h1>😜 Momina Mazak Machine 😜</h1>
+<p>Dropdown se nickname select karo, aur Chidhao botton click karo jab soon lo to ruk jao button click kar do</p>
+
+<select id="nicknameSelect">
+  <option value="">-- Select Nickname --</option>
+  <option value="momina">Momina</option>
+  <option value="moti">Moti Momina</option>
+  <option value="gendi">Gendi</option>
+  <option value="haathi">Haathi</option>
+  <option value="choti">Choti Momina</option>
+  <option value="intelligent">Intelligent Momina</option>
+</select>
+
+<button id="chidhaoBtn" onclick="chidhana()">Chidhana 😆</button>
+<button id="requestBtn" onclick="requestFun()">Request 💌</button>
+<button id="rukjaoBtn" onclick="rukJao()">Ruk Jao ❤️</button>
+
+<div id="messageBox"></div>
+
+<footer>Made with ❤️ by Mahmood Bhai</footer>
+
+<script>
+function speak(text) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "hi-IN";
+  speech.pitch = 1;
+  speech.rate = 1;
+  speech.volume = 1;
+  window.speechSynthesis.speak(speech);
+}
+
+function chidhana() {
+  const name = document.getElementById("nicknameSelect").value;
+  const msgBox = document.getElementById("messageBox");
+  let msg = "";
+  let color = "#03a9f4";
+
+  switch(name) {
+    case "momina":
+      msg = "Momina, mobile thoda kam chalaya karo or insta bhi,suna hun ke tu ghar ka cashier hai";
+      color = "#ff4081";
+      break;
+    case "moti":
+      msg = "Haan tu thodi se moti hai par thik hai utna rahna chahiye";
+      color = "#f57c00";
+      break;
+    case "gendi":
+      msg = "Issi ki tarah lagti ha";
+      color = "#8e24aa";
+      break;
+    case "haathi":
+      msg = "Jab tu ghar mai chalti hai tab pura ghar kaanpta hai";
+      color = "#009688";
+      break;
+    case "choti":
+      msg = "Behan, tera height kam hai mere se is liye tu mere se next time fight mat karna";
+      color = "#3949ab";
+      break;
+    case "intelligent":
+      msg = "haan tu apne class ka topper bhi rah chuki hai";
+      color = "#43a047";
+      break;
+    default:
+      msg = "Pehle koi nickname select to kar Momina";
+      color = "#9e9e9e";
+  }
+
+  msgBox.style.backgroundColor = color;
+  msgBox.textContent = msg;
+  speak(msg);
+}
+
+function requestFun() {
+  const msgBox = document.getElementById("messageBox");
+  const msg = "Apna nickname sayad bhul gayi thi to socha yaad dila dun yaad dilaane ka 1000,2000 bhej do shoes le lunga waise bhi tu to cashier hai";
+  msgBox.style.backgroundColor = "#ff9800";
+  msgBox.textContent = msg;
+  speak(msg);
+}
+
+function rukJao() {
+  const msgBox = document.getElementById("messageBox");
+  const msg = "Ruk jaunga, par mere exam ka date pata kar ke jaldi batana or mera note bhejte rahna";
+  msgBox.style.backgroundColor = "#4caf50";
+  msgBox.textContent = msg;
+  speak(msg);
+}
+</script>
+
+</body>
+</html>
